@@ -1,0 +1,3 @@
+# ignore all files .dll, .map
+*.dll
+*.map

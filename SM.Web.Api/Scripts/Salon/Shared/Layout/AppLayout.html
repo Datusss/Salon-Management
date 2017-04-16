@@ -1,0 +1,132 @@
+﻿    <!-- BEGIN HEADER -->
+<div class="page-header">
+    <!-- BEGIN HEADER TOP -->
+    <div class="page-header-top">
+        <div class="container">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                Salon Management
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler"></a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown dropdown-user dropdown-dark">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img class="img-circle" src="Content/Theme/Images/avatar.png" />
+                            <span class="username username-hide-mobile"> Trần Lê Cường</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="extra_profile.html">
+                                    <i class="icon-user"></i> My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="page_calendar.html">
+                                    <i class="icon-calendar"></i> My Calendar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inbox.html">
+                                    <i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
+                                        3
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <i class="icon-rocket"></i> My Tasks <span class="badge badge-success">
+                                        7
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="extra_lock.html">
+                                    <i class="icon-lock"></i> Lock Screen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="login.html">
+                                    <i class="icon-key"></i> Log Out
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END USER LOGIN DROPDOWN -->
+                </ul>
+            </div>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+    </div>
+    <!-- END HEADER TOP -->
+    <!-- BEGIN HEADER MENU -->
+    <div class="page-header-menu">
+        <div class="container">
+            <!-- BEGIN MEGA MENU -->
+            <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+            <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
+            <div class="hor-menu ">
+                <ul class="nav navbar-nav">
+                    <li ui-sref-active="active">
+                        <a ui-sref="App.Dashboard"><i class="fa fa-dashboard"></i> Tổng quan</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="App.Bill"><i class="fa fa-file"></i> Hóa đơn</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="App.Customer"><i class="fa fa-users"></i> Khách hàng</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="App.Service">
+                            <i class="fa fa-cut"></i>
+                            Dịch vụ
+                        </a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="App.Staff">
+                            <i class="fa fa-male"></i> 
+                            Nhân viên
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-line-chart"></i> Báo cáo</a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-cogs"></i> Cài đặt</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- END MEGA MENU -->
+        </div>
+    </div>
+    <!-- END HEADER MENU -->
+</div>
+<!-- END HEADER -->
+<!-- BEGIN PAGE CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN PAGE CONTENT -->
+    <div class="page-content">
+        <div class="container">
+            <ui-view />
+        </div>
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+    <div class="container">
+        2015 &copy; Trần Lê Cường. All Rights Reserved.
+    </div>
+</div>
+<div class="scroll-to-top">
+    <i class="icon-arrow-up"></i>
+</div>
+<!-- END FOOTER -->

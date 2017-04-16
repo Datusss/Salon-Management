@@ -1,0 +1,57 @@
+﻿<div class="col-md-3">
+    <ul kendo-panel-bar id="filter">
+        <li>
+            Tìm kiếm
+            <div class="list-filter">
+                <ul class="list-unstyled fieldlist">
+                    <li>
+                        <input ng-model="filter.keyword" ng-change="applyFilter()" type="text" class="k-textbox" style="width: 100%;" placeholder="Tìm kiếm theo tên nhân viên" />
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            Số bản ghi
+            <div class="list-filter">
+                <ul class="list-unstyled fieldlist">
+                    <li>
+                        <select kendo-drop-down-list ng-model="showRowNumer" ng-change="changeRowNumber()">
+                            <option selected value="15">15</option>
+                            <option value="25">25</option>
+                            <option value="35">35</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="col-md-9">
+    <article class="page-content-head">
+        <h1>
+            Nhân viên
+        </h1>
+        <div class="right-control">
+            <kendo-button class="k-primary" ng-click="addNewStaff()"><i class="fa fa-plus"></i> Thêm nhân viên</kendo-button>
+        </div>
+    </article>
+
+    <article class="page-content-container">
+        <div kendo-grid="staffGrid" k-options="customerGridOptions">
+            <div k-detail-template>
+                <kendo-tabstrip>
+                    <ul>
+                        <li class="k-state-active">Thông tin khách hàng</li>
+                        <li>Hóa đơn</li>
+                    </ul>
+                    <div>
+                        <staff-form staff="dataItem" on-remove="refreshStaffGrid()" on-save="refreshStaffGrid()"></staff-form>
+                    </div>
+                    <div>
+
+                    </div>
+                </kendo-tabstrip>
+            </div>
+        </div>
+    </article>
+</div>

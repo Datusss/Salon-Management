@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d5e89f55e49a49e4a85c4ca762a06745" Name="Diagram1">
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.Card" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.Customer" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.Position" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.Service" Width="1.5" PointX="8" PointY="6" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.ServiceGroup" Width="1.5" PointX="5.75" PointY="6.125" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.Staff" Width="1.5" PointX="3" PointY="6.25" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.User" Width="1.5" PointX="3" PointY="9.625" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_Customer_Card" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_Staff_Position" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_Service_ServiceGroup" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.CardService" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.Log" Width="1.5" PointX="7.375" PointY="9.75" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_CardService_Card" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_CardService_Service" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.BillService" Width="1.5" PointX="10.25" PointY="3.375" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_BillService_Service" />
+        <EntityTypeShape EntityType="ThaiAnhSalonModel.Bill" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_Bill_Customer" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_Bill_Staff" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_Bill_Staff1" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_Bill_User" />
+        <AssociationConnector Association="ThaiAnhSalonModel.FK_BillService_Bill" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

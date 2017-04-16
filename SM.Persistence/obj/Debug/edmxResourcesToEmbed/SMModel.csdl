@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThaiAnhSalonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ThaiAnhSalonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cards" EntityType="ThaiAnhSalonModel.Card" />
+    <EntitySet Name="Customers" EntityType="ThaiAnhSalonModel.Customer" />
+    <EntitySet Name="Positions" EntityType="ThaiAnhSalonModel.Position" />
+    <EntitySet Name="Services" EntityType="ThaiAnhSalonModel.Service" />
+    <EntitySet Name="ServiceGroups" EntityType="ThaiAnhSalonModel.ServiceGroup" />
+    <EntitySet Name="Staffs" EntityType="ThaiAnhSalonModel.Staff" />
+    <EntitySet Name="Users" EntityType="ThaiAnhSalonModel.User" />
+    <AssociationSet Name="FK_Customer_Card" Association="ThaiAnhSalonModel.FK_Customer_Card">
+      <End Role="Card" EntitySet="Cards" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Position" Association="ThaiAnhSalonModel.FK_Staff_Position">
+      <End Role="Position" EntitySet="Positions" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_ServiceGroup" Association="ThaiAnhSalonModel.FK_Service_ServiceGroup">
+      <End Role="ServiceGroup" EntitySet="ServiceGroups" />
+      <End Role="Service" EntitySet="Services" />
+    </AssociationSet>
+    <EntitySet Name="CardServices" EntityType="ThaiAnhSalonModel.CardService" />
+    <EntitySet Name="Logs" EntityType="ThaiAnhSalonModel.Log" />
+    <AssociationSet Name="FK_CardService_Card" Association="ThaiAnhSalonModel.FK_CardService_Card">
+      <End Role="Card" EntitySet="Cards" />
+      <End Role="CardService" EntitySet="CardServices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CardService_Service" Association="ThaiAnhSalonModel.FK_CardService_Service">
+      <End Role="Service" EntitySet="Services" />
+      <End Role="CardService" EntitySet="CardServices" />
+    </AssociationSet>
+    <EntitySet Name="BillServices" EntityType="ThaiAnhSalonModel.BillService" />
+    <AssociationSet Name="FK_BillService_Service" Association="ThaiAnhSalonModel.FK_BillService_Service">
+      <End Role="Service" EntitySet="Services" />
+      <End Role="BillService" EntitySet="BillServices" />
+    </AssociationSet>
+    <EntitySet Name="Bills" EntityType="ThaiAnhSalonModel.Bill" />
+    <AssociationSet Name="FK_Bill_Customer" Association="ThaiAnhSalonModel.FK_Bill_Customer">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Staff" Association="ThaiAnhSalonModel.FK_Bill_Staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Staff1" Association="ThaiAnhSalonModel.FK_Bill_Staff1">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_User" Association="ThaiAnhSalonModel.FK_Bill_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillService_Bill" Association="ThaiAnhSalonModel.FK_BillService_Bill">
+      <End Role="Bill" EntitySet="Bills" />
+      <End Role="BillService" EntitySet="BillServices" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="CardId" />
+    </Key>
+    <Property Name="CardId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customers" Relationship="ThaiAnhSalonModel.FK_Customer_Card" FromRole="Card" ToRole="Customer" />
+    <Property Name="RequirePrice" Type="Double" />
+    <NavigationProperty Name="CardServices" Relationship="ThaiAnhSalonModel.FK_CardService_Card" FromRole="Card" ToRole="CardService" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Boolean" />
+    <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDay" Type="DateTime" Precision="3" />
+    <Property Name="CardId" Type="Int32" />
+    <NavigationProperty Name="Card" Relationship="ThaiAnhSalonModel.FK_Customer_Card" FromRole="Customer" ToRole="Card" />
+    <NavigationProperty Name="Bills" Relationship="ThaiAnhSalonModel.FK_Bill_Customer" FromRole="Customer" ToRole="Bill" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="PositionId" />
+    </Key>
+    <Property Name="PositionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Staffs" Relationship="ThaiAnhSalonModel.FK_Staff_Position" FromRole="Position" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceGroupId" Type="Int32" />
+    <Property Name="Rank" Type="Int32" />
+    <NavigationProperty Name="ServiceGroup" Relationship="ThaiAnhSalonModel.FK_Service_ServiceGroup" FromRole="Service" ToRole="ServiceGroup" />
+    <NavigationProperty Name="CardServices" Relationship="ThaiAnhSalonModel.FK_CardService_Service" FromRole="Service" ToRole="CardService" />
+    <NavigationProperty Name="BillServices" Relationship="ThaiAnhSalonModel.FK_BillService_Service" FromRole="Service" ToRole="BillService" />
+  </EntityType>
+  <EntityType Name="ServiceGroup">
+    <Key>
+      <PropertyRef Name="ServiceGroupId" />
+    </Key>
+    <Property Name="ServiceGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Rank" Type="Int32" />
+    <NavigationProperty Name="Services" Relationship="ThaiAnhSalonModel.FK_Service_ServiceGroup" FromRole="ServiceGroup" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffId" />
+    </Key>
+    <Property Name="StaffId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDay" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="Boolean" />
+    <Property Name="PositionId" Type="Int32" />
+    <NavigationProperty Name="Position" Relationship="ThaiAnhSalonModel.FK_Staff_Position" FromRole="Staff" ToRole="Position" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Bills" Relationship="ThaiAnhSalonModel.FK_Bill_Staff" FromRole="Staff" ToRole="Bill" />
+    <NavigationProperty Name="Bills1" Relationship="ThaiAnhSalonModel.FK_Bill_Staff1" FromRole="Staff" ToRole="Bill" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Boolean" />
+    <NavigationProperty Name="Bills" Relationship="ThaiAnhSalonModel.FK_Bill_User" FromRole="User" ToRole="Bill" />
+  </EntityType>
+  <Association Name="FK_Customer_Card">
+    <End Type="ThaiAnhSalonModel.Card" Role="Card" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.Customer" Role="Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Card">
+        <PropertyRef Name="CardId" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Position">
+    <End Type="ThaiAnhSalonModel.Position" Role="Position" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.Staff" Role="Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position">
+        <PropertyRef Name="PositionId" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="PositionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_ServiceGroup">
+    <End Type="ThaiAnhSalonModel.ServiceGroup" Role="ServiceGroup" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.Service" Role="Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceGroup">
+        <PropertyRef Name="ServiceGroupId" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="ServiceGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CardService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardId" Type="Int32" />
+    <Property Name="ServiceId" Type="Int32" />
+    <Property Name="DiscountPrice" Type="Double" />
+    <Property Name="DiscountType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DiscountRatio" Type="Int32" />
+    <NavigationProperty Name="Card" Relationship="ThaiAnhSalonModel.FK_CardService_Card" FromRole="CardService" ToRole="Card" />
+    <NavigationProperty Name="Service" Relationship="ThaiAnhSalonModel.FK_CardService_Service" FromRole="CardService" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LogType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LogObjectId" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_CardService_Card">
+    <End Type="ThaiAnhSalonModel.Card" Role="Card" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.CardService" Role="CardService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Card">
+        <PropertyRef Name="CardId" />
+      </Principal>
+      <Dependent Role="CardService">
+        <PropertyRef Name="CardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CardService_Service">
+    <End Type="ThaiAnhSalonModel.Service" Role="Service" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.CardService" Role="CardService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="CardService">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BillService">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ServiceId" Type="Int32" Nullable="false" />
+    <Property Name="BillId" Type="Int64" Nullable="false" />
+    <Property Name="DiscountPrice" Type="Double" />
+    <Property Name="DiscountType" Type="Int32" />
+    <Property Name="DiscountRatio" Type="Int32" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="RealPrice" Type="Double" />
+    <NavigationProperty Name="Service" Relationship="ThaiAnhSalonModel.FK_BillService_Service" FromRole="BillService" ToRole="Service" />
+    <NavigationProperty Name="Bill" Relationship="ThaiAnhSalonModel.FK_BillService_Bill" FromRole="BillService" ToRole="Bill" />
+  </EntityType>
+  <Association Name="FK_BillService_Service">
+    <End Type="ThaiAnhSalonModel.Service" Role="Service" Multiplicity="1" />
+    <End Type="ThaiAnhSalonModel.BillService" Role="BillService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="BillService">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Notice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="DiscountPrice" Type="Int32" />
+    <Property Name="DiscountType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DiscountRatio" Type="Byte" />
+    <Property Name="CustomerId" Type="Int64" />
+    <Property Name="StaffId" Type="Int32" />
+    <Property Name="SubStaffId" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <NavigationProperty Name="Customer" Relationship="ThaiAnhSalonModel.FK_Bill_Customer" FromRole="Bill" ToRole="Customer" />
+    <NavigationProperty Name="Staff" Relationship="ThaiAnhSalonModel.FK_Bill_Staff" FromRole="Bill" ToRole="Staff" />
+    <NavigationProperty Name="Staff1" Relationship="ThaiAnhSalonModel.FK_Bill_Staff1" FromRole="Bill" ToRole="Staff" />
+    <NavigationProperty Name="User" Relationship="ThaiAnhSalonModel.FK_Bill_User" FromRole="Bill" ToRole="User" />
+    <NavigationProperty Name="BillServices" Relationship="ThaiAnhSalonModel.FK_BillService_Bill" FromRole="Bill" ToRole="BillService" />
+  </EntityType>
+  <Association Name="FK_Bill_Customer">
+    <End Type="ThaiAnhSalonModel.Customer" Role="Customer" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Staff">
+    <End Type="ThaiAnhSalonModel.Staff" Role="Staff" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffId" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Staff1">
+    <End Type="ThaiAnhSalonModel.Staff" Role="Staff" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffId" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="SubStaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_User">
+    <End Type="ThaiAnhSalonModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="ThaiAnhSalonModel.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillService_Bill">
+    <End Type="ThaiAnhSalonModel.Bill" Role="Bill" Multiplicity="1" />
+    <End Type="ThaiAnhSalonModel.BillService" Role="BillService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BillService">
+        <PropertyRef Name="BillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

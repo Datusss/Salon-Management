@@ -1,0 +1,349 @@
+/* here you can put your own css to customize and override the theme */
+
+/***
+Rounded Portlets
+***/
+/*
+.portlet {
+	border-radius: 4px !important;
+}
+
+.portlet .portlet-title {
+	border-radius: 4px 4px 0px 0px !important;
+}
+
+.portlet .portlet-body,
+.portlet .portlet-body .form-actions  {
+	border-radius: 0px 0px 4px 4px !important;
+}
+*/
+
+.page-header .page-header-top .page-logo, .logo {
+        font-size: 25px;
+    margin-top: 18px;
+    height: 0px;
+    text-transform: uppercase;
+    width: 300px;
+    color: #158EE6;
+    font-weight: bold;
+}
+
+.logo {
+    margin-bottom: 66px !important;
+}
+
+.logo a, .logo a:hover{
+    color: #158EE6;
+    text-decoration: none;
+}
+
+.menu-button{
+    background: #4db3a4;
+    height: 51px;
+}
+
+.menu-button a{
+    color: #fff;
+}
+
+.nav>.menu-button>a:hover{
+    background: #3C9084;
+    color: #fff;
+}
+
+.page-content-head{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+.form-control,.btn {
+    border-radius: 0;
+}
+.page-content-head h1{
+    margin: 0;
+    padding: 0;
+    float: left;
+    color: #333;
+}
+
+.btn-success:active, .btn-success.active{
+    background: #005b9d !important; 
+}
+
+.page-content-head .right-control{
+    float: right;
+}
+
+.page-content-container{
+    clear: both;
+    width: 100%;
+}
+
+.wd-wrap-gird {
+    padding: 0px 35px;
+}
+
+.list-form li{
+    width: 100%;
+    margin: 15px 0px;
+}
+
+.list-form li label{
+    width: 120px;
+    display: inline-block;
+    color: #656565;
+}
+
+.list-form li input, .list-form li select,  .list-form li span.k-dropdown {
+    width: 270px;
+}
+
+.w100{
+    width: 100% !important;
+}
+
+.pd-l-35{
+    padding-left: 35px;
+}
+
+.pd-bt-15{
+    padding-bottom: 15px;
+}
+
+.discount-text{
+    width: 50%;
+    float: left;
+    padding-left: 5px;
+}
+
+.discount-btn{
+    min-width: 30px !important;
+    height: 26px !important;
+    margin: 0 !important;
+}
+
+.text-form{
+    height: 23px;
+    padding-left: 5px;
+}
+
+.btn-input {
+    margin-top: -2px;
+}
+
+.list-filter{
+    padding: 10px 15px !important;
+}
+
+.page-header .page-header-menu {
+    background: #158EE6;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li.active > a, .page-header .page-header-menu .hor-menu .navbar-nav > li.active > a:hover, .page-header .page-header-menu .hor-menu .navbar-nav > li.current > a, .page-header .page-header-menu .hor-menu .navbar-nav > li.current > a:hover{
+    color: #158EE6;
+    background: #fff;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li > a{
+    color: #fff;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li.open > a > i, .page-header .page-header-menu .hor-menu .navbar-nav > li > a:hover > i {
+    color: #158EE6;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li.active > a > i, .page-header .page-header-menu .hor-menu .navbar-nav > li.active > a:hover > i, .page-header .page-header-menu .hor-menu .navbar-nav > li.current > a > i, .page-header .page-header-menu .hor-menu .navbar-nav > li.current > a:hover > i {
+    color: #158EE6;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li > a > i {
+    color: #fff;
+}
+
+.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open>.dropdown-toggle.btn-success.focus, .open>.dropdown-toggle.btn-success:focus, .open>.dropdown-toggle.btn-success:hover{
+    background: #005b9d;
+}
+
+.page-footer {
+    background: #158EE6;
+    color: #fff;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li.open > a, .page-header .page-header-menu .hor-menu .navbar-nav > li > a:hover {
+    color: #158EE6;
+    background: #fff !important;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li > a:focus {
+    background: #fff !important;
+}
+
+.page-header .page-header-top .top-menu .navbar-nav > li.dropdown-dark .dropdown-menu {
+    background: #158EE6;
+}
+
+.page-header .page-header-top .top-menu .navbar-nav > li.dropdown-dark .dropdown-menu.dropdown-menu-default > li a, .page-header .page-header-top .top-menu .navbar-nav > li.dropdown-dark .dropdown-menu .dropdown-menu-list > li a {
+    color: #fff;
+}
+.page-header .page-header-top .top-menu .navbar-nav > li.dropdown-dark .dropdown-menu.dropdown-menu-default > li a > i, .page-header .page-header-top .top-menu .navbar-nav > li.dropdown-dark .dropdown-menu .dropdown-menu-list > li a > i {
+    color: #fff;
+}
+
+.page-header .page-header-top .top-menu .navbar-nav > li.dropdown-dark .dropdown-menu.dropdown-menu-default > li.divider {
+    background: #fff;
+}
+
+.page-header .page-header-top .top-menu .navbar-nav > li.dropdown-user > .dropdown-toggle > .username{
+     color: #158EE6;
+}
+
+.k-window>.k-header {
+    background: #158EE6;
+    color: #fff;
+}
+
+.k-primary, .k-overflow-container .k-primary{
+    background-color: #158EE6;
+    border-color: #158EE6;
+}
+
+div.k-window{
+    border: none;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu{
+    background-color: #158EE6;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu li > a{
+    color: #fff;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu li > a > i{
+    color: #fff;
+}
+
+.page-header .page-header-menu .hor-menu .navbar-nav > li .dropdown-menu li:hover > a{
+    background: #fff;
+    color: #158EE6;
+}
+
+/*.k-button{
+    padding: 8px 10px;
+}*/
+
+.font-green-sharp{
+    color: #158EE6 !important;
+}
+
+.align-right{
+    text-align: right;
+}
+
+.table-form{
+
+}
+
+.tblBox .k-header, .tblBox td{
+    text-transform: none !important;
+}
+
+.tblBox tr:hover{
+    background: none;
+}
+
+.tblBox .k-button{
+    min-width: 30px !important;
+}
+
+.tblBox div{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.mb15{
+    margin-bottom: 15px;
+}
+
+.clb{
+    clear: both;
+}
+
+.table>tbody>tr>td{
+    border-top: none;
+}
+
+.w270{
+    width: 270px !important;
+}
+
+.w200{
+     width: 200px !important;
+}
+
+div.k-window-content {
+    padding: 20px 30px 30px;
+    overflow: visible;
+}
+
+.w98{
+    width: 98% !important;
+}
+
+.w85{
+    width: 85% !important;
+}
+
+.w100px{
+    width: 100px !important; 
+}
+
+.ip-group .k-button{
+    margin-top: 1px;
+    margin-left: -3px;
+}
+
+.w80{
+    width: 80% !important;
+}
+
+.k-danger{
+    background: #e74c3c;
+    color: #fff;
+}
+
+.k-danger:active,.k-danger:hover,.k-danger:focus{
+     background: #c0392b !important;
+    color: #fff;
+}
+
+.dialog-button{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.dialog-button button{
+    margin-right: 20px;
+}
+
+.dialog-message{
+    line-height: 30px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.wrap-sgroup-tree-item i{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.wrap-sgroup-tree-item a{
+    visibility: hidden;
+}
+
+.wrap-sgroup-tree-item:hover a{
+    visibility: visible;
+}

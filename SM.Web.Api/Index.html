@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>Salon Management</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN THEME STYLES -->
+    <link href="Content/Theme/components-rounded.css" rel="stylesheet" />
+    <link href="Content/Theme/plugins.css" rel="stylesheet" />
+    <link href="Content/Theme/layout.css" rel="stylesheet" />
+    <link href="Content/Theme/default.css" rel="stylesheet" />
+
+    <link href="Scripts/kendo/styles/kendo.common.min.css" rel="stylesheet" />
+
+    <!--<link href="Scripts/kendo/styles/kendo.dataviz.material.min.css" rel="stylesheet" />
+    <link href="Scripts/kendo/styles/kendo.common-material.core.min.css" rel="stylesheet" />
+    <link href="Scripts/kendo/styles/kendo.material.min.css" rel="stylesheet" />
+    <link href="Scripts/kendo/styles/kendo.material.mobile.min.css" rel="stylesheet" />
+    <link href="Scripts/kendo/styles/kendo.common-material.min.css" rel="stylesheet" />-->
+
+    <link href="Scripts/kendo/styles/kendo.common-office365.min.css" rel="stylesheet" />
+    <link href="Scripts/kendo/styles/kendo.dataviz.office365.min.css" rel="stylesheet" />
+    <link href="Scripts/kendo/styles/kendo.office365.min.css" rel="stylesheet" />
+    <link href="Scripts/kendo/styles/kendo.office365.mobile.min.css" rel="stylesheet" />
+    <link href="Scripts/toastr/angular-toastr.min.css" rel="stylesheet" />
+
+    <link href="Content/Theme/custom.css" rel="stylesheet" />
+    <!-- END THEME STYLES -->
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
+<!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
+<body ng-app="SalonApp" class="login">
+
+    <div ui-view=""></div>
+
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-animate.min.js"></script>
+    <script src="Scripts/angular-aria.min.js"></script>
+    <script src="Scripts/angular-cookies.min.js"></script>
+    <script src="Scripts/angular-loader.min.js"></script>
+    <script src="Scripts/angular-message-format.min.js"></script>
+    <script src="Scripts/angular-messages.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-sanitize.min.js"></script>
+    <script src="Scripts/angular-touch.min.js"></script>
+
+    <script src="Scripts/kendo/js/kendo.all.min.js"></script>
+    <script src="Scripts/angular-ui-router.min.js"></script>
+    <script src="Scripts/Salon/Shared/Lib/angular-kendo-window.js"></script>
+    <script src="Scripts/toastr/angular-toastr.min.js"></script>
+    <script src="Scripts/toastr/angular-toastr.tpls.min.js"></script>
+
+    <script src="Scripts/Salon/App.js"></script>
+    <script src="Scripts/Salon/App.Router.js"></script>
+    <script src="Scripts/Salon/App.Constant.js"></script>
+
+    <script src="Scripts/Salon/Shared/Directives/CustomerForm/CustomerFormDirective.js"></script>
+    <script src="Scripts/Salon/Shared/Directives/BillForm/BillFormDirective.js"></script>
+    <script src="Scripts/Salon/Shared/Directives/ServiceGroupForm/ServiceGroupFormDirective.js"></script>
+    <script src="Scripts/Salon/Shared/Directives/ServiceForm/ServiceFormDirective.js"></script>
+    <script src="Scripts/Salon/Shared/Directives/StaffForm/StaffFormDirective.js"></script>
+
+    <script src="Scripts/Salon/Shared/Services/AuthenticationService.js"></script>
+    <script src="Scripts/Salon/Shared/Services/PriceBookService.js"></script>
+    <script src="Scripts/Salon/Shared/Services/UltiService.js"></script>
+    <script src="Scripts/Salon/Shared/Services/CustomerService.js"></script>
+    <script src="Scripts/Salon/Shared/Services/ServiceGroupService.js"></script>
+    <script src="Scripts/Salon/Shared/Services/ServiceService.js"></script>
+    <script src="Scripts/Salon/Shared/Services/StaffService.js"></script>
+    <script src="Scripts/Salon/Shared/Services/BillService.js"></script>
+    <script src="Scripts/Salon/Shared/Services/MessageBoxService.js"></script>
+
+    <script src="Scripts/Salon/Dashboard/DashboardController.js"></script>
+    <script src="Scripts/Salon/Login/LoginController.js"></script>
+    <script src="Scripts/Salon/Bill/BillController.js"></script>
+    <script src="Scripts/Salon/Customer/CustomerController.js"></script>
+    <script src="Scripts/Salon/Service/ServiceController.js"></script>
+    <script src="Scripts/Salon/Staff/StaffController.js"></script>
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

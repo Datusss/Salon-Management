@@ -1,0 +1,40 @@
+﻿<div class="form-group">
+    <label class="control-label">
+        Họ và tên:
+    </label>
+    <input class="form-control" ng-model="staff.Name" />
+</div>
+<div class="form-group">
+    <label class="control-label">
+        Giới tính:
+    </label>
+    <select kendo-drop-down-list ng-model="staff.Gender">
+        <option selected value="true">Nữ</option>
+        <option value="false">Nam</option>
+    </select>
+</div>
+<div class="form-group">
+    <label class="control-label">
+        Điện thoại:
+    </label>
+    <input class="form-control" ng-model="staff.Phone" />
+</div>
+<div class="form-group">
+    <label class="control-label">
+        Ngày sinh:
+    </label>
+    <input class="form-control" kendo-date-picker k-ng-model="staff.BirthDay" />
+</div>
+<div class="form-group">
+    <label class="control-label">
+        Vị trí:
+    </label>
+    <select kendo-drop-down-list k-options="ddlPositionOptions" ng-model="staff.PositionId">
+
+    </select>
+</div>
+<div class="form-group">
+    <kendo-button class="k-button k-primary" ng-click="saveServiceGroup()"><i class="fa fa-save"></i> Lưu lại</kendo-button>
+    <kendo-button ng-show="staff.StaffId > 0" ng-click="removeStaff()" class="k-button k-danger"><i class="fa fa-remove"></i> Xóa</kendo-button>
+</div>
+

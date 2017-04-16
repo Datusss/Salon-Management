@@ -1,0 +1,32 @@
+﻿<div class="form-group">
+    <label class="control-label">
+        Tên dịch vụ:
+    </label>
+    <input class="form-control" ng-model="service.Name" />
+</div>
+<div class="form-group">
+    <label class="control-label">
+        Giá tiền:
+    </label>
+    <input class="form-control" ng-model="service.Price" />
+</div>
+<div class="form-group">
+    <label class="control-label">
+        Nhóm dịch vụ:
+    </label>
+    <select kendo-drop-down-list="ddlServiceGroup" ng-model="service.ServiceGroupId" k-options="serviceGroupDropDownOptions">
+
+    </select>
+    <kendo-button class="k-primary" ng-click="addNewServiceGroup()"><i class="fa fa-plus"></i></kendo-button>
+</div>
+<div class="form-group">
+    <label class="control-label">
+        Thứ tự:
+    </label>
+    <input class="form-control" ng-model="service.Rank" />
+</div>
+<div class="form-group">
+    <kendo-button class="k-button k-primary" ng-click="saveServiceGroup()"><i class="fa fa-save"></i> Lưu lại</kendo-button>
+    <kendo-button ng-show="service.ServiceId > 0" ng-click="removeService()" class="k-button k-danger"><i class="fa fa-remove"></i> Xóa</kendo-button>
+</div>
+

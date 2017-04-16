@@ -1,0 +1,87 @@
+﻿<article class="clb tblBox">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table table-form">
+                    <tr>
+                        <td class="w100px">
+                            Khách hàng
+                        </td>
+                        <td>
+                            <div class="ip-group">
+                                <input kendo-auto-complete k-ng-model="bill.CustomerSugest" k-options="autofindCustomerOptions" class="w80" />
+                                <kendo-button class="k-primary" ng-click="addNewCustomer()"><i class="fa fa-plus"></i></kendo-button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nhóm dịch vụ
+                        </td>
+                        <td>
+                            <select id="ServiceGroup" kendo-drop-down-list k-options="ddlServiceGroupOptions" ng-model="ServiceGroupId" class="w100"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Dịch vụ
+                        </td>
+                        <td>
+                            <div class="ip-group">
+                                <select id="ServiceName" kendo-drop-down-list k-options="ddlServiceOptions" ng-model="ServiceId" class="w80"></select>
+                                <kendo-button class="k-primary" ng-click="addServiceForCustomer()"><i class="fa fa-plus"></i></kendo-button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table table-form">
+                    <tr>
+                        <td class="w100px">
+                            Nhân viên chính
+                        </td>
+                        <td>
+                            <select kendo-drop-down-list k-options="dllMainStaffOptions" ng-model="bill.StaffId" class="w100"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nhân viên phụ
+                        </td>
+                        <td>
+                            <select kendo-drop-down-list k-options="ddlSubStaffOptions" ng-model="bill.SubStaffId" class="w100"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ghi chú
+                        </td>
+                        <td>
+                            <textarea ng-model="bill.Notice" class="w98"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</article>
+
+<article class="clb mb15 tblBox">
+    <h4>
+        Dịch vụ sử dụng
+    </h4>
+    <div class="table-responsive">
+        <div kendo-grid k-options="bfServiceGridOptions">
+
+        </div>
+    </div>
+</article>
+
+<article class="clb mb15 tblBox">
+    <kendo-button class="k-button k-primary" ng-click="saveBill()"><i class="fa fa-save"></i> Lưu lại</kendo-button>
+    <kendo-button ng-show="bill.Id > 0" ng-click="removeBill()" class="k-button k-danger"><i class="fa fa-remove"></i> Xóa</kendo-button>
+    <kendo-button ng-click="openWdPrintBill()" class="k-button k-print"><i class="fa fa-print"> In</i></kendo-button>
+</article>

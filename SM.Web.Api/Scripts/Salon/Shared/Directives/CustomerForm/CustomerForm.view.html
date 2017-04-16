@@ -1,0 +1,111 @@
+﻿<article class="clb tblBox">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-form">
+                <tr>
+                    <td class="w100px">
+                        Họ và Tên
+                    </td>
+                    <td>
+                        <input ng-model="customer.CustomerName" class="w100"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Giới tính
+                    </td>
+                    <td>
+                        <select kendo-drop-down-list ng-model="customer.Gender" class="w100">
+                            <option selected value=True>
+                                Nữ
+                            </option>
+                            <option value=False>
+                                Nam
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ngày sinh
+                    </td>
+                    <td>
+                        <input type="text" kendo-date-picker k-ng-model="customer.BirthDay" class="w100"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Điện thoại
+                    </td>
+                    <td>
+                        <input ng-model="customer.Phone" class="w100"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Quốc gia
+                    </td>
+                    <td>
+                        <select kendo-drop-down-list ng-model="customer.Country" class="w100">
+                            <option selected value="Việt Nam">
+                                Việt Nam
+                            </option>
+                            <option value="Khác">
+                                Khác
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Thành phố
+                    </td>
+                    <td>
+                        <select kendo-drop-down-list ng-model="customer.City" class="w100">
+                            <option selected value="Hà Nội">
+                                Hà Nội
+                            </option>
+                            <option value="Thành Phố Hồ Chí Minh">
+                                Thành Phố Hồ Chí Minh
+                            </option>
+                            <option value="Khác">
+                                Khác
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Quận/Huyện
+                    </td>
+                    <td>
+                        <select kendo-drop-down-list ng-model="customer.District" class="w100">
+                            <option selected value="Long Biên">
+                                Long Biên
+                            </option>
+                            <option value="Hoàn Kiếm">
+                                Hoàn Kiếm
+                            </option>
+                            <option value="Khác">
+                                Khác
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Địa chỉ
+                    </td>
+                    <td>
+                        <input  ng-model="customer.Address" class="w100"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</article>
+<article class="clb mb15 tblBox">
+    <kendo-button class="k-button k-primary" ng-click="saveCustomer()"><i class="fa fa-save"></i> Lưu lại</kendo-button>
+    <kendo-button ng-show="customer.CustomerId > 0" ng-click="removeCustomer()" class="k-button k-danger"><i class="fa fa-remove"></i> Xóa</kendo-button>
+</article>
+

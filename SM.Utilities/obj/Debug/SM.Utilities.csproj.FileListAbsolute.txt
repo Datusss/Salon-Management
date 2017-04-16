@@ -1,0 +1,5 @@
+F:\Study\IT\Web\C#\Project\SM\SalonManagement\SM.Utilities\bin\Debug\SM.Utilities.dll
+F:\Study\IT\Web\C#\Project\SM\SalonManagement\SM.Utilities\bin\Debug\SM.Utilities.pdb
+F:\Study\IT\Web\C#\Project\SM\SalonManagement\SM.Utilities\obj\Debug\SM.Utilities.csprojResolveAssemblyReference.cache
+F:\Study\IT\Web\C#\Project\SM\SalonManagement\SM.Utilities\obj\Debug\SM.Utilities.dll
+F:\Study\IT\Web\C#\Project\SM\SalonManagement\SM.Utilities\obj\Debug\SM.Utilities.pdb
